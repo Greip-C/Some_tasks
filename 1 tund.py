@@ -37,4 +37,3 @@ Sr = round(Sr_calc(pi,r),2)
 
 print ("Rounded rea of a triangle S= ",S)
 print ("Rounded area of the inner circle Sr= ",Sr)
-breakpoint

@@ -15,7 +15,7 @@ def create_list(promt):
     return user_date
 
 def date_check (user_date):
-    dates = [31,28,21,20,21,30,31,31,30,30,31]
+    dates = [31,28,31,30,31,30,31,31,30,31,30,31]
     if 1> user_date[0] <12:
         print("Wrong day")
         return False
@@ -24,8 +24,12 @@ def date_check (user_date):
         return False
     try: 
         dates[user_date[1]-1]
-        print("Correct Date")
-        return True
+        if dates[user_date[1]-1] == user_date[0]:
+            print("Correct Date")
+            return True
+        else:
+            print("Wrong Month")
+            return False
     except IndexError:
         print("Wrong Month")
         return False

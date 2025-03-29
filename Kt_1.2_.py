@@ -1,4 +1,5 @@
 import math
+import sys
 
 def peaprogramm():
 
@@ -8,7 +9,7 @@ def peaprogramm():
                     return float(input(promt))
                 except ValueError:
                     print("Sisestamise viga!")
-                    ##sys.exit()
+                    sys.exit()
 
     def input_check_i (promt): # Base input check int
             while True:
@@ -16,7 +17,7 @@ def peaprogramm():
                     return int(input(promt))
                 except ValueError:
                     print("Sisestamise viga!")
-                    ##sys.exit()
+                    sys.exit()
 
     def input_comparing_f (): # Input comparing a and b
         def input_check (promt): # Base input check
@@ -25,7 +26,7 @@ def peaprogramm():
                     return float(input(promt))
                 except ValueError:
                     print("Sisestamise viga!")
-                    ##sys.exit()
+                    sys.exit()
 
         while True:
             Start = input_check("Sisesta vahemiku algus => ")
@@ -34,8 +35,8 @@ def peaprogramm():
                 break
             else:
                 print("Valed andmed")
+                sys.exit()
                 continue
-                ##sys.exit()
         return(Start,End)
 
     def variant_17_2(a, b, n, d): #CALCULATOR!!!

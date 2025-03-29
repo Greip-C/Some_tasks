@@ -8,7 +8,7 @@ def variant_17_1():
                     return int(input(promt))
                 except ValueError:
                     print("Sisestamise viga!")
-                    ##sys.exit()
+                    sys.exit()
 
         while True:
             Start_Year = input_check("Sisestage vahemiku algus aasta => ")
@@ -17,8 +17,8 @@ def variant_17_1():
                 break
             else:
                 print("Algus peab olema väiksem, kui lõpp!")
+                sys.exit()
                 continue
-                ##sys.exit()
         return(Start_Year,End_Year)
 
     def Year_check(Start_Year,End_Year): #Year divide check

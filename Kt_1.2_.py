@@ -1,5 +1,5 @@
-import math
-import sys
+from math import sin,cos,pi
+from sys import exit
 
 def peaprogramm():
 
@@ -9,7 +9,7 @@ def peaprogramm():
                     return float(input(promt))
                 except ValueError:
                     print("Sisestamise viga!")
-                    sys.exit()
+                    exit()
 
     def input_check_i (promt): # Base input check int
             while True:
@@ -17,7 +17,7 @@ def peaprogramm():
                     return int(input(promt))
                 except ValueError:
                     print("Sisestamise viga!")
-                    sys.exit()
+                    exit()
 
     def input_comparing_f (): # Input comparing a and b
         def input_check (promt): # Base input check
@@ -26,7 +26,7 @@ def peaprogramm():
                     return float(input(promt))
                 except ValueError:
                     print("Sisestamise viga!")
-                    sys.exit()
+                    exit()
 
         while True:
             Start = input_check("Sisesta vahemiku algus => ")
@@ -35,7 +35,7 @@ def peaprogramm():
                 break
             else:
                 print("Valed andmed")
-                sys.exit()
+                exit()
                 continue
         return(Start,End)
 
@@ -46,14 +46,13 @@ def peaprogramm():
 
             points = tuple(a + i*step for i in range(n+1))
 
-            #print(points)
             return(points)
         
         def function_mat(points): #Funcion calculator
             y_output = tuple(
-                3*math.cos((math.pi*i)/3) + 5*math.cos(math.pi*i) if i <= -2 else
-                5*math.sin((math.pi*i)/2) - 3*math.sin((2*math.pi*i)/5) if -2< i < 2 else
-                math.cos(math.pi*i)+((math.sin(i**2))/4)
+                3*cos((pi*i)/3) + 5*cos(pi*i) if i <= -2 else
+                5*sin((pi*i)/2) - 3*sin((2*pi*i)/5) if -2< i < 2 else
+                cos(pi*i)+((sin(i**2))/4)
                 for i in points
             )
             #print(y_output)
@@ -78,12 +77,12 @@ def peaprogramm():
         r_y_output=tuple_round(y_output)
 
         for i in range(n+1):
-            print(f"{r_points[i]},\t{r_y_output[i]}")
+            print(f"{r_points[i]}\t{r_y_output[i]}")
         
         if d_comparing(r_y_output,d) == 0:
             print("Vastus on tühi")
         else:
-            print("Funktsiooni väärtuste arv, mis on arvust",d_comparing(r_y_output,d),"väiksem, on")
+            print("Funktsiooni väärtuste arv, mis on arvust", d ,"väiksem, on", d_comparing(r_y_output,d))
 
     a,b=input_comparing_f()
     n=input_check_i("Sisesta jaotiste arv => ")

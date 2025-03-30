@@ -1,4 +1,4 @@
-import sys
+from sys import exit
 def variant_17_1():
     
     def input_comparing (): # Input comparing
@@ -8,7 +8,7 @@ def variant_17_1():
                     return int(input(promt))
                 except ValueError:
                     print("Sisestamise viga!")
-                    sys.exit()
+                    exit()
 
         while True:
             Start_Year = input_check("Sisestage vahemiku algus aasta => ")
@@ -17,7 +17,7 @@ def variant_17_1():
                 break
             else:
                 print("Algus peab olema väiksem, kui lõpp!")
-                sys.exit()
+                exit()
                 continue
         return(Start_Year,End_Year)
 
@@ -29,7 +29,7 @@ def variant_17_1():
     Start_Year,End_Year = input_comparing()
 
     Chosen_one=Year_check(Start_Year,End_Year)
-    print("Leitud aastad:",Chosen_one)
+    print("Leitud aastad:",*Chosen_one)
     print("Antud aastate vahemikus on",len(Chosen_one),"mitte liigaastat")
 
 variant_17_1()

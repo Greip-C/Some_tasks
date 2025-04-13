@@ -180,9 +180,6 @@ def draw_S(x,y): # S
     draw_block(x+10, y, 10, 20, "split_circle_w_neg", 20)
     draw_block(x+40, y-10, 30, 10, "rectang", 0)
 
-def draw_A(x,y): # A
-    draw_block(x,y-30, 10, 20, "split_circle_h_neg", 20)
-
 def draw_name_TIMUR(): #Here I request and align letters
     start_x = -200
     y = 50
@@ -192,7 +189,6 @@ def draw_name_TIMUR(): #Here I request and align letters
     draw_M(start_x + 10 + spacing*2, y)
     draw_U(start_x + 50 + spacing*3, y)
     draw_R(start_x + 80 + spacing*4, y)
-    draw_A(start_x + 150 + spacing*5, y)
 
 draw_name_TIMUR()
 

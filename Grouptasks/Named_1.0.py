@@ -27,7 +27,7 @@ def draw_block(x, y,width,height, type, r): # Magic Machine - DO NOT BRAKE!!!
     #       Always used as object wide
     #   6. type
     #       The most important part, with type you sellect a object drawning type
-    #       Type list: circle, split_circle_w, split_circle_h, slope, neg-slope, rectang
+    #       Type list: circle, split_circle_w,split_circle_w_neg, split_circle_h, split_circle_h_neg, slope, neg-slope, rectang
     #   7. r
     #       Practicaly never use, but need for circles
   
@@ -52,6 +52,20 @@ def draw_block(x, y,width,height, type, r): # Magic Machine - DO NOT BRAKE!!!
         pen.forward(width)
         pen.right(180+90+180)
         pen.circle(r-width,-180)
+
+    elif type == "split_circle_w_neg": # Split circles (R,D,S,...)
+    # How to use?:
+    #   Make a OTHER-half circle with (x,y) and radius(r)
+    #   (x,y) = are left outer part of circle
+    #   widht = is diference betewen iner- and outer- radius
+    # r= is a radius wow...
+        pen.left(180)
+        pen.circle(r,180)
+        pen.left(90)
+        pen.forward(width)
+        pen.right(180+90+180)
+        pen.circle(r-width,-180)
+    
     elif type == "split_circle_h": # Split circles (U,A,O,...)
     #How to use?:
     #   Make a half circle with (x,y) and radius(r)
@@ -59,6 +73,20 @@ def draw_block(x, y,width,height, type, r): # Magic Machine - DO NOT BRAKE!!!
     #   widht = is diference betewen iner- and outer- radius
     # r= is a radius wow...
         pen.right(90)
+        pen.circle(r,180)
+        pen.left(90)
+        pen.forward(width)
+        pen.right(180+90+180)
+        pen.circle(r-width,-180)
+        pen.left(90)
+    
+    elif type == "split_circle_h_neg": # Split circles (S,...)
+    #How to use?:
+    #   Make a OTHER half circle with (x,y) and radius(r)
+    #   (x,y) = are left outer part of circle
+    #   widht = is diference betewen iner- and outer- radius
+    # r= is a radius wow...
+        pen.left(90)
         pen.circle(r,180)
         pen.left(90)
         pen.forward(width)
@@ -145,6 +173,13 @@ def draw_R(x, y): # R
     draw_block(x+30, y-40, 10, 20, "split_circle_w", 20)
     draw_block(x, y-30, 40, 40, "slope", 0)
 
+def draw_S(x,y): # S
+    draw_block(x, y-60, 30, 10, "rectang", 0)
+    draw_block(x+30, y-70, 10, 20, "split_circle_w", 20)
+    draw_block(x+10, y-30, 20, 10, "rectang", 0)
+    pen.speed(8)
+    draw_block(x+10, y, 10, 20, "split_circle_w_neg", 20)
+    draw_block(x+40, y-10, 30, 10, "rectang", 0)
 
 def draw_name_TIMUR(): #Here I request and align letters
     start_x = -200

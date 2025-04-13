@@ -137,8 +137,6 @@ def draw_U(x, y): # U
     draw_block(x, y, 10, 40, "rectang", 0)
     draw_block(x, y-40, 10, 30, "split_circle_h", 30)
     draw_block(x+50, y, 10, 70, "rectang", 0)
-    #draw_block(x + 50, y - 70, 10, 60)
-    #draw_block(x + 10, y - 10, 40, 10)
 
 def draw_R(x, y): # R
     draw_block(x, y, 10, 70, "rectang", 0)

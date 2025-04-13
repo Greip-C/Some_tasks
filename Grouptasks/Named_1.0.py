@@ -177,7 +177,6 @@ def draw_S(x,y): # S
     draw_block(x, y-60, 30, 10, "rectang", 0)
     draw_block(x+30, y-70, 10, 20, "split_circle_w", 20)
     draw_block(x+10, y-30, 20, 10, "rectang", 0)
-    pen.speed(8)
     draw_block(x+10, y, 10, 20, "split_circle_w_neg", 20)
     draw_block(x+40, y-10, 30, 10, "rectang", 0)
 
